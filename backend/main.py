@@ -3,7 +3,6 @@ from flask_cors import CORS
 from dotenv import load_dotenv
 import os
 
-#O BRA
 app = Flask(__name__)
 CORS(app, resources={r"/login": {"origins": "http://localhost:3000"}})
 
