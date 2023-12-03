@@ -1,4 +1,3 @@
-// LoginForm/index.jsx
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
@@ -31,9 +30,9 @@ const LoginForm = () => {
         navigate('/confirmation');
         console.log('Login bem-sucedido!');
       } else {
-        toast.error('Credenciais não encontradas. Clique em "Registrar-se" para ter acesso.', {
+        toast.error('Credenciais não encontradas. Clique em "Registrar-se" para criar uma conta e ter acesso.', {
           position: toast.POSITION.TOP_CENTER,
-          autoClose: 5000,
+          autoClose: 3000,
           hideProgressBar: true,
           closeOnClick: true,
           pauseOnHover: true,
@@ -45,7 +44,7 @@ const LoginForm = () => {
     } catch (error) {
       toast.error('Erro ao realizar login. Tente novamente mais tarde.', {
         position: toast.POSITION.TOP_CENTER,
-        autoClose: 5000,
+        autoClose: 3000,
         hideProgressBar: true,
         closeOnClick: true,
         pauseOnHover: true,
@@ -69,9 +68,6 @@ const LoginForm = () => {
         </label>
         <button type="submit">Login</button>
         <div className="login-form-footer">
-          <button type="button" onClick={() => console.log('Esqueceu a senha clicado')}>
-            Esqueceu a senha?
-          </button>
           <p>
             Não tem conta? <Link to="/register">Registre-se</Link>
           </p>
