@@ -1,9 +1,10 @@
 from sqlalchemy import text
 from .db import db
 
-def insert_user(username, password):
-    sql = text("INSERT INTO login (user_login, password_login) VALUES (:username, :password)")
-    db.session.execute(sql, {'username': username, 'password': password})
+
+def insert_user(username, password, email):
+    sql = text("INSERT INTO login (user_login, password_login, email_login) VALUES (:username, :password, :email)")
+    db.session.execute(sql, {'username': username, 'password': password, 'email': email})
     db.session.commit()
 
 def get_all_users():
